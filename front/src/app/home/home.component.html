@@ -1,0 +1,51 @@
+
+<div class="inner cover">
+    <h1>Bienvenue sur le site de crowdfunding: Un pour tous et tous pour un!</h1>
+    <div *ngIf="info.token; else loggedOut">
+       
+        <ng-template #loggedOut>
+            Please <a routerLink="/auth/login">login here</a>.
+          </ng-template>
+        </div>
+        <h2 class="sub-header">Liste des projets</h2>
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Id du projet</th>
+                <th>Nom</th>
+                <th>Budget</th>
+                <th>description</th>
+                <th>categorie</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let proj of projets">
+                  <td>{{proj.id}}</td>
+                  <td>{{proj.nom}}</td>
+                  <td>{{proj.budget}}</td>
+                  <td>{{proj.description}}</td>
+                  <td>{{proj.categorie.type_de_don}}</td>
+                </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h1 class="cover-heading">Your Information.</h1>
+        <p class="lead"></p>
+        <p>
+            <strong>Nom d'utilisateur:</strong> {{info.username}}<br/>
+            <strong>Roles:</strong> {{info.authorities}}<br />
+            <strong>Token:</strong> {{info.token}}.
+          </p>
+          <button class="btn btn-secondary" (click)="logout()">Logout</button>
+        </div>
+    
+      
+    <div class="mastfoot">
+        <div class="inner">
+          <p>Un pour tous et tous pour un! , by <a href="https://www.facebook.com/quentin.philippe.338">Quentin PHILIPPE</a>.</p>
+        </div>
+      </div>
+  
+  

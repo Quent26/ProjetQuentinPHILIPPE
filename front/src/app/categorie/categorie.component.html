@@ -1,0 +1,12 @@
+<div class="container">
+  <h4>Ajouter une catégorie: </h4>
+
+  <form [formGroup]="categorieForm" (ngSubmit)="saveCategorie()">
+    <div class="form-group">
+        <label for="type_de_don">Nouveau type de dons: </label>
+        <input formControlName="type_de_don" type="text" class="form-control" id="type_de_don"/>
+    </div>
+    <button class="btn btn-primary">Créer categorie</button>
+
+  </form>
+</div>

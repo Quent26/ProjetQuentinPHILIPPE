@@ -1,0 +1,34 @@
+<div class="container">
+  <h4>Nouveau projet: </h4>
+
+ 
+  <form  [formGroup]="projetForm" (ngSubmit)="saveProjet()">
+    <div class="form-group">
+      <label for="nom">Nom du projet: </label>
+      <input formControlName="nom" type="text" class="form-control" id="nom"/>
+    </div>
+    <div class="form-group">
+        <label for="budget">budget nécessaire: </label>
+        <input formControlName="budget" type="number" class="form-control" id="budget"/>
+      </div>
+      <div class="form-group">
+        <label for="description">description du projet: </label>
+        <input formControlName="description" type="text" class="form-control" id="description"/>
+      </div>
+      <div>
+        <label for="categorie">categorie du projet: </label>
+        <select formControlName="categorie" class="custom-select d-block w-100" id="categorie">
+        <option value="">Choisir categorie</option>
+        <option *ngFor="let cat of categories" [ngValue]="cat">{{cat.type_de_don}}</option>
+        </select>
+    </div>
+        <div>
+        <label for="nomPorteurDeProjet">porteur du projet: </label>
+        <select formControlName="nomPorteurDeProjet" class="custom-select d-block w-100" id="nomPorteurDeProjet">
+        <option value="">Choisir porteur</option>
+        <option *ngFor="let poseur of poseurs" [ngValue]="poseur">{{poseur.nomPorteurDeProjet}}</option>
+        </select>
+      </div>
+      <button class="btn btn-primary">créer projet</button>
+  </form>
+  </div>

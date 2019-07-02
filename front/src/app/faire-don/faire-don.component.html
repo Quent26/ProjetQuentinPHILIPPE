@@ -1,0 +1,11 @@
+<div class="container">
+<h4>Faire un don pour ce projet :</h4>
+
+<form [formGroup]="fairedonForm" (ngSubmit)="saveFaireDon()">
+  <div class="form-group">
+    <label for="montant">Montant à donner: </label>
+    <input formControlName="montant" type="number" class="form-control" id="montant"/>
+  </div>
+  <button class="btn btn-primary">Poster don</button>
+</form>
+</div>
